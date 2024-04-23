@@ -1,0 +1,47 @@
+#include <stdio.h>
+typedef struct process
+{
+    int bursttime,turnaroundtime,waittime,pid;
+}process;
+int main()
+{
+    int n,ct=0;
+    printf("Enter number of processes:");
+    scanf("%d",&n);
+    process p[n];
+    for(int i=0;i<n;i++)
+    {
+        p[i].pid=i+1;
+        printf("Enter burst time for each process\n");
+        scanf("%d",&p[i].bursttime);
+    }
+    process temp;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(p[j].bursttime>p[j+1].bursttime){
+                temp=p[j];
+                p[j]=p[j+1];
+                p[j+1]=temp;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        ct=ct+p[i].bursttime;
+        p[i].turnaroundtime=ct;
+        p[i].waittime=p[i].turnaroundtime-p[i].bursttime;
+    }
+    printf("Process\tBurst Time\tTurnaround time\tWaiting time\n");
+    for(int i=0;i<n;i++){
+        printf("%d\t%d\t\t%d\t\t%d\n",p[i].pid,p[i].bursttime,p[i].turnaroundtime,p[i].waittime);
+    }
+    int totaltat=0,totalwt=0;
+    for(int i=0;i<n;i++){
+        totaltat+=p[i].turnaroundtime;
+        totalwt+=p[i].waittime;
+    }
+    float avgtat=totaltat/n;
+    float avgwt=totalwt/n;
+    printf("Average turnaround time=%f\n",avgtat);
+    printf("Average waiting time=%f\n",avgwt);
+return 0;
+}

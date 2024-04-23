@@ -1,0 +1,52 @@
+#include<stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter no. of processes:");
+    scanf("%d",&n);
+    int wt[n],bt[n],tat[n],ct[n],pt[n];
+    float awt=0.0,atat=0.0;
+    printf("Enter burst time and priority for each process:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d %d",&bt[i],&pt[i]);
+    }
+    int temp=0,pos;
+    for(int i=0; i<n; i++)
+    {
+        pos = i;
+        for(int j=i+1; j<n; j++)
+        {
+            if(pt[j]<pt[pos])
+            {
+                pos = j;
+            }
+        }
+        temp = pt[i]; //swapping
+        pt[i] = pt[pos];
+        pt[pos] = temp;
+
+        temp = bt[i];   //swapping
+        bt[i] = bt[pos];
+        bt[pos] = temp;
+    }
+    printf("\nProcess\tbt\tpt");
+    for(int i=0;i<n;i++){
+        printf("\n%d\t%d\t%d",i+1,bt[i],pt[i]);
+    }
+    ct[0]=0;
+    for(int i=0;i<n;i++){
+        ct[i+1]=ct[i]+bt[i];
+        tat[i]=ct[i+1];
+        wt[i]=tat[i]-bt[i];
+        awt+=wt[i];
+        atat+=tat[i];
+    }
+    printf("\nProcess\tbt\tpt\twt\ttat");
+    for(int i=0;i<n;i++){
+        printf("\n%d\t%d\t%d\t%d\t%d",i+1,bt[i],pt[i],wt[i],tat[i]);
+    }
+    printf("\n%f",(awt/n));
+    printf("\n%f",(atat/n));
+    return 0;
+}

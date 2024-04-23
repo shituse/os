@@ -1,4 +1,4 @@
-#include<stdio.h>
+include<stdio.h>
 int main()
 {
     int m,n;
@@ -26,7 +26,7 @@ int main()
             if(blocksize[j]>=processsize[i]){
                 if(bestid==-1)
                     bestid=j;
-                else if(blocksize[bestid]<blocksize[j])
+                else if(blocksize[bestid]>blocksize[j])
                     bestid=j;
             }
         }

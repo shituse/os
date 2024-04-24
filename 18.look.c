@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 void look(int req[], int n, int head, int tc, int dir, int seq[]) {
     int left[n], right[n], leftcount = 0, rightcount = 0;
     for (int i = 0; i < n; i++) {

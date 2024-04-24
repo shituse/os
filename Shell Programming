@@ -1,0 +1,140 @@
+                                              OS Experiment 1
+Experiment 1:
+1.ls
+student@LAB306PC9:~$ ls
+Desktop    Downloads  Music     Public  Templates
+Documents  mahekC21   Pictures  TASM    Videos
+2.ls -l
+student@LAB306PC9:~$ ls -l
+total 40
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Desktop
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Documents
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Downloads
+drwxrwxr-x 3 student student 4096 Jan 18 13:54 
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Music
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Pictures
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Public
+drwxr-xr-x 8 student student 4096 Jan 10 16:54 TASM
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Templates
+drwxr-xr-x 2 student student 4096 Jan  6 14:02 Videos
+3.ls -r
+student@LAB306PC9:~$ ls -r
+Videos     TASM    Pictures     Documents
+Templates  Public  Music     Downloads  Desktop
+4.ls -a
+student@LAB306PC9:~$ ls -a
+.              .dmrc        .linuxmint  .sudo_as_admin_successful
+..             Documents    .local      TASM
+.bash_history  .dosbox      mahekC21    Templates
+.bash_logout   Downloads    .mozilla    Videos
+.bashrc        .gtkrc-2.0   Music       .Xauthority
+.cache         .gtkrc-xfce  Pictures    .xsession-errors
+.config        .idlerc      .profile    .xsession-errors.old
+Desktop        .ipython     Public
+5.student@LAB36PC9:~$ ls .*
+.bash_history  .dmrc        .profile                   .xsession-errors
+.bash_logout   .gtkrc-2.0   .sudo_as_admin_successful  .xsession-errors.old
+.bashrc        .gtkrc-xfce  .Xauthority
+ 
+.:
+Desktop    Downloads  Music     Public  Templates
+Documents    Pictures  TASM    Videos
+ 
+..:
+admini  student
+ 
+.cache:
+evolution  fontconfig     mesa_shader_cache  obexd       wallpaper
+flatpak    gstreamer-1.0  mozilla            thumbnails
+ 
+.config:
+autostart  cinnamon-session  evolution  gtk-3.0      menus  qt5ct
+caja       dconf             gedit      hexchat      nemo   user-dirs.dirs
+cinnamon   enchant           goa-1.0    libreoffice  pulse  user-dirs.locale
+ 
+.dosbox:
+dosbox-0.74-3.conf
+ 
+.idlerc:
+recent-files.lst
+ 
+.ipython:
+ 
+.linuxmint:
+mintupdate  mintwelcome
+ 
+.local:
+share  state
+ 
+.mozilla:
+extensions  firefox
+6.. ls -x
+student@LAB306PC9:~$ ls -x
+C21-72  Desktop    Downloads  Music     Public  Templates
+Documents  mahekC21   Pictures  TASM    Videos
+7.  $cat file1 fil2 > file3
+8. ls *.*
+student@LAB306PC9:~/C21-72$ ls *.*
+file1.txt  file2.txt  file3.txt
+9.rmdir
+student@LAB306PC9:~/C21-72$ mkdir C21-72-2
+student@LAB306PC9:~/C21-72$ rmdir C21-72-2
+student@LAB306PC9:~/C21-72$ cd C21-77-2
+bash: cd: C21-72-2: No such file or directory
+10. mv-rename 
+student@LAB306PC9:~/C21-72$ mv file1.txt file4.txt
+11. head - display first 10 line
+student@LAB306PC9:~/C21-72$ head file3.txt
+hello
+We are trying linux comands in our first os lab
+And ctrl-d can be use to save the content of file
+12. tail - display last 10 lines
+student@LAB306PC9:~/C21-72$ tail file3.txt
+Hello
+We are trying linux comands in our first os lab
+And ctrl-d can be use to save the content of file
+13. sort - sorts the line
+student@LAB306PC9:~/C21-72$ sort file3.txt
+And ctrl-d can be use to save the content of file
+hello
+We are trying linux comands in our first os lab
+14. wc - its displays the number of lines, words, characters
+student@LAB306PC9:~/C21-72$ wc file3.txt
+  4  24 123 file3.txt
+15. pwd - displays present working directory
+student@LAB306PC9~/C21-72$ pwd
+/home/student/C21-72
+ 
+ 
+16.student@LAB306PC9:~/C21-72$ cat > linux.txt
+The command line is your direct access to a computer. It's where you ask software to perform hardware actions that point-and-click graphical user interfaces (GUIs) simply can't ask. 
+ 
+Command lines are available on many operating systems—proprietary or open source. But it’s usually associated with Linux, because both command lines and open source software, together, give users unrestricted access to their computer.
+ 
+Our latest release of Red Hat® Enterprise Linux comes with even more built-in command line capabilities than ever before and includes consoles that bundle those capabilities in easy-to-use modules that exist off of the command line.
+ 
+ 
+17.student@LAB306PC9:~/C21-72$ cat > working.txt
+Think about an OS like a car engine. An engine can run on its own, but it becomes a functional car when it’s connected with a transmission, axles, and wheels. Without the engine running properly, the rest of the car won’t work.
+ 
+Linux was designed to be similar to UNIX, but has evolved to run on a wide variety of hardware from phones to supercomputers. Every Linux-based OS involves the Linux kernel—which manages hardware resources—and a set of software packages that make up the rest of the operating system. Organizations can also choose to run their Linux OS on a Linux server.
+ 
+The OS includes some common core components, like the GNU tools, among others. These tools give the user a way to manage the resources provided by the kernel, install additional software, configure performance and security settings, and more. All of these tools bundled together make up the functional operating system. Because Linux is an open source OS, combinations of software can vary between Linux distributions.
+ 
+ 
+18.student@LAB306PC9:~/C21-72$ cat linux.txt working.txt > Linux2.txt
+ 
+19.student@LAB306PC9:~/C21-72$ cat Linux2.txt
+The command line is your direct access to a computer. It's where you ask software to perform hardware actions that point-and-click graphical user interfaces (GUIs) simply can't ask. 
+ 
+Command lines are available on many operating systems—proprietary or open source. But it’s usually associated with Linux, because both command lines and open source software, together, give users unrestricted access to their computer.
+ 
+Our latest release of Red Hat® Enterprise Linux comes with even more built-in command line capabilities than ever before and includes consoles that bundle those capabilities in easy-to-use modules that exist off of the command line.
+Think about an OS like a car engine. An engine can run on its own, but it becomes a functional car when it’s connected with a transmission, axles, and wheels. Without the engine running properly, the rest of the car won’t work.
+ 
+Linux was designed to be similar to UNIX, but has evolved to run on a wide variety of hardware from phones to supercomputers. Every Linux-based OS involves the Linux kernel—which manages hardware resources—and a set of software packages that make up the rest of the operating system. Organizations can also choose to run their Linux OS on a Linux server.
+ 
+The OS includes some common core components, like the GNU tools, among others. These tools give the user a way to manage the resources provided by the kernel, install additional software, configure performance and security settings, and more. All of these tools bundled together make up the functional operating system. Because Linux is an open source OS, combinations of software can vary between Linux distributions.
+
+
+

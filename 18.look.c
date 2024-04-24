@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void scan(int req[], int n, int head, int tc, int dir, int seq[]) {
+void look(int req[], int n, int head, int tc, int dir, int seq[]) {
     int left[n], right[n], leftcount = 0, rightcount = 0;
     for (int i = 0; i < n; i++) {
         if (req[i] < head) {
@@ -80,7 +80,7 @@ int main() {
     printf("Enter direction(1-->right 0-->left):");
     scanf("%d", &dir);
     int seq[n];
-    scan(req, n, head, totalcylinders, dir, seq);
+    look(req, n, head, totalcylinders, dir, seq);
     return 0;
 }
 
